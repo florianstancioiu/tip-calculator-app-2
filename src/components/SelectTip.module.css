@@ -1,0 +1,36 @@
+.tip-percentages-wrapper {
+  margin-top: 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+  margin-bottom: 3.2rem;
+}
+
+.title {
+  color: var(--color-5);
+}
+
+.tip-percentage {
+  background-color: var(--color-3);
+  color: var(--color-2);
+  text-align: center;
+  height: 4.8rem;
+  line-height: 4.8rem;
+  border-radius: 5px;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.tip-percentage-input {
+  display: block;
+  width: 100%;
+  border: none;
+  margin: 0;
+  background-color: var(--color-4);
+  height: 4.8rem;
+  line-height: 4.8rem;
+  border-radius: 5px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: center;
+}

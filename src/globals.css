@@ -1,0 +1,21 @@
+:root {
+  --color-1: #c5e4e7;
+  --color-2: white;
+  --color-3: #00474b;
+  --color-4: #f3f9fa;
+  --color-5: #5e7a7d;
+  --color-6: #26c2ae;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-family: 'Space Mono', monospace;
+  font-weight: bold;
+  margin: 0;
+  background-color: var(--color-1);
+}
