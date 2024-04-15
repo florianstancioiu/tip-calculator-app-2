@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  color: var(--color-2);
+  margin-bottom: 0;
+}
+
+.person {
+  color: var(--color-7);
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.value {
+  font-size: 3.2rem;
+  color: var(--color-6);
+}

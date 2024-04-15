@@ -12,7 +12,7 @@ const TipValue = ({ title, value }: TipValueProps) => {
         <p className={classes.title}>{title}</p>
         <p className={classes.person}>/ person</p>
       </div>
-      <div className={classes.value}>{value}</div>
+      <div className={classes.value}>${value}</div>
     </div>
   );
 };
