@@ -8,10 +8,14 @@ import TipTotal from './TipTotal';
 const Calculator = () => {
   return (
     <main className={classes.wrapper}>
-      <Bill />
-      <SelectTip />
-      <NumberOfPeople />
-      <TipTotal />
+      <div className={classes['left-inner-wrapper']}>
+        <Bill />
+        <SelectTip />
+        <NumberOfPeople />
+      </div>
+      <div className={classes['right-inner-wrapper']}>
+        <TipTotal />
+      </div>
     </main>
   );
 };

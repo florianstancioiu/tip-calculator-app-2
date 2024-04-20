@@ -6,3 +6,9 @@
   display: block;
   margin: 0 auto;
 }
+
+@media screen and (min-width: 920px) {
+  .logo-wrapper {
+    margin: 16rem 0 8.8rem;
+  }
+}

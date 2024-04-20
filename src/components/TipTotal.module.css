@@ -5,3 +5,14 @@
   border-radius: 15px;
   color: var(--color-2);
 }
+
+@media screen and (min-width: 920px) {
+  .wrapper {
+    margin-top: 0;
+    padding: 4rem;
+  }
+
+  .wrapper button {
+    margin-top: 13rem;
+  }
+}

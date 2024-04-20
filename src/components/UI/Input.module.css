@@ -25,3 +25,9 @@
   margin-bottom: 6px;
   color: var(--color-5);
 }
+
+@media screen and (min-width: 920px) {
+  .wrapper {
+    margin-bottom: 4rem;
+  }
+}
