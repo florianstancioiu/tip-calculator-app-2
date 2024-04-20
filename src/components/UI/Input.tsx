@@ -1,6 +1,12 @@
 import classes from './Input.module.css';
 
-const Input = ({ title, defaultValue, icon }) => {
+export interface InputProps {
+  title: string;
+  defaultValue: number;
+  icon: string;
+}
+
+const Input = ({ title, defaultValue, icon }: InputProps) => {
   return (
     <div className={classes.wrapper}>
       <label className={classes.title}>{title}</label>
