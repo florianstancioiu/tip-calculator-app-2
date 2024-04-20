@@ -8,4 +8,10 @@
   height: 48px;
   line-height: 48px;
   border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn:hover {
+  background-color: var(--color-8);
 }
