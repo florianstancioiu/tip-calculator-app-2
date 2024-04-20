@@ -1,10 +1,23 @@
+import { useDispatch } from 'react-redux';
+import { calculatorActions } from '../store/calculator';
+
 import Input from './UI/Input';
 import DollarIcon from '../images/icon-dollar.svg';
 
 const Bill = () => {
+  const dispatch = useDispatch();
+  const billChangeHandler = (event) => {
+    dispatch(calculatorActions.setBill({ bill: event.target.value }));
+  };
+
   return (
     <>
-      <Input title='Bill' defaultValue={0} icon={DollarIcon} />
+      <Input
+        title='Bill'
+        defaultValue={0}
+        onChange={billChangeHandler}
+        icon={DollarIcon}
+      />
     </>
   );
 };

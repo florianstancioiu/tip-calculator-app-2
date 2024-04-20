@@ -4,15 +4,17 @@ export interface InputProps {
   title: string;
   defaultValue: number;
   icon: string;
+  onChange?: () => void;
 }
 
-const Input = ({ title, defaultValue, icon }: InputProps) => {
+const Input = ({ title, defaultValue, icon, onChange }: InputProps) => {
   return (
     <div className={classes.wrapper}>
       <label className={classes.title}>{title}</label>
       <div className={classes['input-icon-wrapper']}>
         <input
           className={classes.input}
+          onChange={onChange}
           type='text'
           defaultValue={defaultValue}
         />
