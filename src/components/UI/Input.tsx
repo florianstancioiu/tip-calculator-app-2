@@ -1,10 +1,12 @@
+import { ChangeEvent } from 'react';
+
 import classes from './Input.module.css';
 
 export interface InputProps {
   title: string;
   defaultValue: number;
   icon: string;
-  onChange?: () => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Input = ({ title, defaultValue, icon, onChange }: InputProps) => {

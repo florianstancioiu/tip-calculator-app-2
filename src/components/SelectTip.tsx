@@ -1,3 +1,4 @@
+import { ChangeEvent } from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { calculatorActions } from '../store/calculator';
@@ -13,7 +14,7 @@ const SelectTip = () => {
     setActiveTip(index);
     dispatch(calculatorActions.setTipPercentage({ tipPercentage: percentage }));
   };
-  const setPercentageFromInput = (event) => {
+  const setPercentageFromInput = (event: ChangeEvent<HTMLInputElement>) => {
     dispatch(
       calculatorActions.setTipPercentage({ tipPercentage: event.target.value })
     );

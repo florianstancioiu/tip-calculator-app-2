@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { calculatorActions } from '../store/calculator';
+import { IRootState } from '../store';
 
 import classes from './TipTotal.module.css';
 
@@ -8,8 +9,10 @@ import Button from './UI/Button';
 
 const TipTotal = () => {
   const dispatch = useDispatch();
-  const tipAmount = useSelector((state) => state.calculator.tipAmount);
-  const total = useSelector((state) => state.calculator.total);
+  const tipAmount = useSelector(
+    (state: IRootState) => state.calculator.tipAmount
+  );
+  const total = useSelector((state: IRootState) => state.calculator.total);
 
   const resetCalculatorHandler = () => {
     dispatch(calculatorActions.resetState());

@@ -1,3 +1,4 @@
+import { ChangeEvent } from 'react';
 import { useDispatch } from 'react-redux';
 import { calculatorActions } from '../store/calculator';
 
@@ -7,7 +8,7 @@ import PersonIcon from '../images/icon-person.svg';
 const NumberOfPeople = () => {
   const dispatch = useDispatch();
 
-  const setNumberOfPeopleHandler = (event) => {
+  const setNumberOfPeopleHandler = (event: ChangeEvent<HTMLInputElement>) => {
     dispatch(
       calculatorActions.setNumberOfPeople({
         numberOfPeople: event.target.value,

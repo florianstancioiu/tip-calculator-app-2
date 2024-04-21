@@ -1,5 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+export interface initialState {
+  tipAmount: number;
+  total: number;
+  bill: number;
+  tipPercentage: number;
+  numberOfPeople: number;
+}
+
 const initialState = {
   tipAmount: 0,
   total: 0,
@@ -10,7 +18,7 @@ const initialState = {
 
 const calculatorSlice = createSlice({
   name: 'calculator',
-  initialState,
+  initialState: initialState,
   reducers: {
     setBill(state, action) {
       const newBill = parseInt(action.payload.bill);
