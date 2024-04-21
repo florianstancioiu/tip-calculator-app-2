@@ -4,16 +4,16 @@ export interface initialState {
   tipAmount: number;
   total: number;
   bill: number;
-  tipPercentage: number;
-  numberOfPeople: number;
+  tipPercentage: number | string;
+  numberOfPeople: number | string;
 }
 
 const initialState = {
   tipAmount: 0,
   total: 0,
   bill: 0,
-  tipPercentage: 0,
-  numberOfPeople: 0,
+  tipPercentage: 10,
+  numberOfPeople: 1,
 };
 
 const calculatorSlice = createSlice({
@@ -54,7 +54,12 @@ const calculatorSlice = createSlice({
         state.numberOfPeople > 0 &&
         state.tipPercentage >= 0
       ) {
-        // TODO: implement logic
+        const { bill, numberOfPeople, tipPercentage } = state;
+        const tipAmount = ((tipPercentage / 100) * bill) / numberOfPeople;
+        const total = bill / numberOfPeople + tipAmount;
+
+        state.tipAmount = parseFloat(tipAmount).toFixed(2);
+        state.total = parseFloat(total).toFixed(2);
       }
     },
   },

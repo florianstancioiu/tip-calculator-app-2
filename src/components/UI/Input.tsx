@@ -18,7 +18,7 @@ const Input = ({ title, defaultValue, icon, onChange }: InputProps) => {
           className={classes.input}
           onChange={onChange}
           type='text'
-          defaultValue={defaultValue}
+          value={defaultValue}
         />
         <img className={classes.icon} src={icon} alt='' />
       </div>

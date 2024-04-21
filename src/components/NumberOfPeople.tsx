@@ -1,12 +1,16 @@
 import { ChangeEvent } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { calculatorActions } from '../store/calculator';
+import { IRootState } from '../store';
 
 import Input from './UI/Input';
 import PersonIcon from '../images/icon-person.svg';
 
 const NumberOfPeople = () => {
   const dispatch = useDispatch();
+  const numberOfPeople = useSelector(
+    (state: IRootState) => state.calculator.numberOfPeople
+  );
 
   const setNumberOfPeopleHandler = (event: ChangeEvent<HTMLInputElement>) => {
     dispatch(
@@ -14,6 +18,7 @@ const NumberOfPeople = () => {
         numberOfPeople: event.target.value,
       })
     );
+    dispatch(calculatorActions.calculateTipAmountAndTotal());
   };
 
   return (
@@ -21,7 +26,7 @@ const NumberOfPeople = () => {
       <Input
         title='Number of People'
         onChange={setNumberOfPeopleHandler}
-        defaultValue={1}
+        defaultValue={numberOfPeople}
         icon={PersonIcon}
       />
     </>
