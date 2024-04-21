@@ -1,6 +1,5 @@
 import { IRootState } from '../store';
 import { ChangeEvent } from 'react';
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { calculatorActions } from '../store/calculator';
 
@@ -12,12 +11,9 @@ const SelectTip = () => {
   const tipPercentage = useSelector(
     (state: IRootState) => state.calculator.tipPercentage
   );
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [activeTip, setActiveTip] = useState<number>(tipPercentage);
 
   const dispatch = useDispatch();
-  const setPercentage = (percentage: number, index: number) => {
-    setActiveTip(index);
+  const setPercentage = (percentage: number) => {
     dispatch(calculatorActions.setTipPercentage({ tipPercentage: percentage }));
     dispatch(calculatorActions.calculateTipAmountAndTotal());
   };
@@ -40,7 +36,7 @@ const SelectTip = () => {
 
           return (
             <div
-              onClick={() => setPercentage(percentage, index)}
+              onClick={() => setPercentage(percentage)}
               key={index}
               className={percentageClass}
             >
@@ -51,7 +47,6 @@ const SelectTip = () => {
         <input
           type='text'
           className={classes['tip-percentage-input']}
-          onClick={() => setActiveTip(-1)}
           onChange={setPercentageFromInput}
           placeholder='Custom'
         />

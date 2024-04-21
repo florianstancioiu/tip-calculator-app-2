@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export interface initialState {
-  tipAmount: number;
-  total: number;
+  tipAmount: number | string;
+  total: number | string;
   bill: number;
-  tipPercentage: number | string;
-  numberOfPeople: number | string;
+  tipPercentage: number;
+  numberOfPeople: number;
 }
 
 const initialState = {
@@ -58,8 +58,8 @@ const calculatorSlice = createSlice({
         const tipAmount = ((tipPercentage / 100) * bill) / numberOfPeople;
         const total = bill / numberOfPeople + tipAmount;
 
-        state.tipAmount = parseFloat(tipAmount).toFixed(2);
-        state.total = parseFloat(total).toFixed(2);
+        state.tipAmount = +parseFloat(tipAmount.toString()).toFixed(2);
+        state.total = +parseFloat(total.toString()).toFixed(2);
       }
     },
   },
