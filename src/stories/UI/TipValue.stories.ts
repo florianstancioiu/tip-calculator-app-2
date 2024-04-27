@@ -1,12 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
 import TipValue from '../../components/UI/TipValue';
 import '../../reset.css';
 import '../../globals.css';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'UI/TipValue',
+  title: 'Components/UI/TipValue',
   component: TipValue,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
